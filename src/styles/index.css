@@ -1,3 +1,42 @@
-/* 
-    General Styles
-*/
+.userlist-container {
+    display: flex; /* Utilizamos flexbox para centrar los elementos */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    flex-direction: column; /* Alineamos los elementos en columna */
+}
+/* Estilos para la lista de usuarios */
+.userlist {
+    list-style-type: none;
+    padding: 25px;
+    border: 2px solid black;
+    width: 650px;
+    justify-content: center;
+}
+  /* Estilos para cada elemento de la lista de usuarios */
+.useritem {
+    display: flex; /* Muestra los elementos en línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    justify-content: space-between;
+}
+.userinfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+  /* Estilos para la imagen de usuario */
+.userimage {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; /* Agrega un margen entre la imagen y la información del usuario */
+    border-radius: 50%;
+}
+.usericons {
+    display: flex; /* Muestra los iconos en línea */
+    align-items: center; /* Alinea verticalmente los iconos */
+}
+/* Estilos para cada icono */
+.usericon {
+    margin-left: 10px; /* Agrega un margen entre los iconos */
+}
