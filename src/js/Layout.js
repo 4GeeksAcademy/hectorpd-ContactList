@@ -2,9 +2,11 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
+import { Home } from "./views/Home";
+import { ContactList } from "./ContactList.js"
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import { UserView } from "./secondview";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -23,8 +25,7 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/single" element={<Single />} />
-					
+						<Route exact path="/user/:userId" render={(props) => <UserView userId={props.match.params.userId} />} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>

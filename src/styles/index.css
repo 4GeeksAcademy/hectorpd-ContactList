@@ -1,5 +1,5 @@
 .userlist-container {
-    display: flex; /* Utilizamos flexbox para centrar los elementos */
+    display: flex; 
     justify-content: center; /* Centramos horizontalmente */
     align-items: center; /* Centramos verticalmente */
     flex-direction: column; /* Alineamos los elementos en columna */
@@ -39,4 +39,8 @@
 /* Estilos para cada icono */
 .usericon {
     margin-left: 10px; /* Agrega un margen entre los iconos */
+}
+/* Estilos para boton de agregar */
+.btn {
+    margin-bottom: 3px;
 }
