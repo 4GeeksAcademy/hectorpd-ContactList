@@ -4,17 +4,22 @@ import { Link } from "react-router-dom";
 
 export const UserList = () => {
   const [list, setList] = useState([]);
-  const [addnewcontact, setAddNewContact] = useState("");
-  const host = "https://jsonplaceholder.typicode.com";
-
+  // const [addnewcontact, setAddNewContact] = useState("");
+  const host = "https://jsonplaceholder.typicode.com/";
+  const url = host + 'users/';
+  const request = {
+    method: "GET",
+    redirect: "follow"
+  };
 
   const localList = async () => {
     if (localStorage.getItem("userLocal") !== null) {
       const data = JSON.parse(localStorage.getItem("userLocal"));
         setList(data); 
-        console.log(data)
+        //console.log(data)
     } else {
-      const response = await fetch(`${host}/users`);
+      const response = await fetch(url, request);
+      console.log(response);
       if (response.ok) {
         const data = await response.json();
         setList(data);
@@ -49,17 +54,17 @@ export const UserList = () => {
   //     }
   //   }
   // };
-  const handleDeleteContact = async (contactId) => {
-    const response = await fetch(`${host}/users/${contactId}`, {
-      method: "DELETE",
-    });
-    if (response.ok) {
-      const updatedTasks = list.filter((contact) => contact.id !== contactId);
-      setList(updatedTasks);
-    } else {
-      console.log("Error al eliminar el contacto");
-    }
-  };
+  // const handleDeleteContact = async (contactId) => {
+  //   const response = await fetch(`${host}/users/${contactId}`, {
+  //     method: "DELETE",
+  //   });
+  //   if (response.ok) {
+  //     const updatedTasks = list.filter((contact) => contact.id !== contactId);
+  //     setList(updatedTasks);
+  //   } else {
+  //     console.log("Error al eliminar el contacto");
+  //   }
+  // };
   useEffect(() => {
     localList();
   }, []);
@@ -100,7 +105,7 @@ export const UserList = () => {
                 <i
                   className="fas fa-trash-alt usericon usericon-delete"
                   title="Delete"
-                  onClick={() => handleDeleteContact(user.id)}
+                  // onClick={() => handleDeleteContact(user.id)}
                 ></i>
               </div>
             </li>
