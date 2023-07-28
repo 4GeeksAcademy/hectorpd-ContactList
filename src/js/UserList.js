@@ -69,6 +69,10 @@ export const UserList = () => {
     localList();
   }, []);
 
+  const datailUser = (id) => {
+    
+  };
+
   return (
     <>
       <h1>Contact List</h1>

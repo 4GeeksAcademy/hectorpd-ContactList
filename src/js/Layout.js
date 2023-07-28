@@ -26,7 +26,7 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/users/*" element={<UserList />} />
+						{/* <Route path="/users/*" element={<UserList />} /> */}
 						<Route path="/users/:userId" element={<UserView />} />
 						{/*<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />*/}
